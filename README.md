@@ -1,7 +1,6 @@
 # DCPNeRF
 **Single-Scene Haze Removal and 3D Reconstruction Based on Dark Channel Prior**
-![在这里插入图片描述](https://img-blog.csdnimg.cn/a25e595e575e4d0cb5ce7e3ad6b9635f.png)
-
+![Overview of our method](https://github.com/C2022G/dcpnerf/blob/main/readme/method.png)
 
 The implementation of our code is referenced in [kwea123-npg_pl](https://github.com/kwea123/ngp_pl)。The hardware and software basis on which our model operates is described next
  - Ubuntu 18.04
@@ -60,4 +59,13 @@ python run.py  \
 ```
 
 ## result
-![在这里插入图片描述](https://img-blog.csdnimg.cn/33f07f7f0e074b1597dc4686c5c49db4.png)
+![Qualitative comparisons were performed on a synthesized hazy dataset.](https://github.com/C2022G/dcpnerf/blob/main/readme/result.png)
+
+
+
+https://github.com/C2022G/dcpnerf/assets/151046579/e9f2b94e-8b70-4ca4-8152-8c5670e7ae4b
+
+
+https://github.com/C2022G/dcpnerf/assets/151046579/10dd58b6-684c-4ce5-ac1e-46c2e1480b51
+
+

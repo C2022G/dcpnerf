@@ -46,6 +46,20 @@ python run.py  \
 	--foggy_weight 2e-4
 ```
 After the training, three types of files will be generated in the current location, such as: log files are generated in the logs folder, model weight files are generated in ckpts, and rendering results are generated in the results folder, including test rendering images and videos of haze scenes and clean scenes
+
+|dataset| dcp_weight | foggy_weight |
+|--|--| --|
+|  ficus | 2e-6 | 4e-6 |
+|  mic | 6e-8 | 2e-6 |
+
+If the default parameters are used in ficus and mic datasets, the haze component will occupy too much, resulting in missing object surfaces.This is shown in the figure below. Therefore, we reduce the intensity of the space occupation of haze particles.
+
+Similarly, we can adjust dcp_weight and foggy_weight if the default parameters don't apply to a particular dataset.
+
+If the scene is missing, dcp_weight and foggy_weight will be decreased, and if there are extra "tumors" in the scene, dcp_weight (mainly this one) and foggy_weight will be increased
+
+
+
 ## Visualization/Evaluation
 By specifying the split, ckpt_path parameters, the run.py script supports rendering new camera trajectories, including test and val, from the pre-trained weights.To render test images,run
 
@@ -61,6 +75,64 @@ python run.py  \
 ## result
 ![Qualitative comparisons were performed on a synthesized hazy dataset.](https://github.com/C2022G/dcpnerf/blob/main/readme/result.png)
 
+
+<table>
+<thead>
+  <tr>
+    <th></th>
+    <th colspan="2">Lego</th>
+    <th colspan="2">Hotdog</th>
+    <th colspan="2">Chair</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>Method</td>
+    <td>PSNR</td>
+    <td>SSIM</td>
+    <td>PSNR</td>
+    <td>SSIM</td>
+    <td>PSNR</td>
+    <td>SSIM</td>
+  </tr>
+  <tr>
+    <td>DCP+ngp</td>
+    <td>23.90</td>
+    <td>0.95</td>
+    <td>19.60</td>
+    <td><s>1.13</s></td>
+    <td>23.30</td>
+    <td><s>1.09</s></td>
+  </tr>
+  <tr>
+    <td>WeatherDiffusion<br>+ngp</td>
+    <td>20.30</td>
+    <td><s>1.37</s></td>
+    <td>20.80</td>
+    <td><s>1.46</s></td>
+    <td>22.10</td>
+    <td><s>1.55</s></td>
+  </tr>
+  <tr>
+    <td>FFANet+ngp</td>
+    <td>22.50</td>
+    <td>0.92</td>
+    <td>23.30</td>
+    <td>0.93</td>
+    <td>21.90</td>
+    <td>0.94</td>
+  </tr>
+  <tr>
+    <td>DCPNeRF</td>
+    <td>27.00</td>
+    <td>0.94</td>
+    <td>29.50</td>
+    <td>0.959</td>
+    <td>30.60</td>
+    <td>0.972</td>
+  </tr>
+</tbody>
+</table>
 
 
 https://github.com/C2022G/dcpnerf/assets/151046579/e9f2b94e-8b70-4ca4-8152-8c5670e7ae4b

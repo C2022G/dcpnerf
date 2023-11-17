@@ -58,7 +58,7 @@ Similarly, we can adjust dcp_weight and foggy_weight if the default parameters d
 
 If the scene is missing, dcp_weight and foggy_weight will be decreased, and if there are extra "tumors" in the scene, dcp_weight (mainly this one) and foggy_weight will be increased
 
-
+**Similarly, when the scene haze concentration increases, the dcp_weight can be considered to increase.**
 
 ## Visualization/Evaluation
 By specifying the split, ckpt_path parameters, the run.py script supports rendering new camera trajectories, including test and val, from the pre-trained weights.To render test images,run

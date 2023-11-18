@@ -61,10 +61,14 @@ If the scene is missing, dcp_weight and foggy_weight will be decreased, and if t
 
 **Similarly, when the scene haze concentration increases, the dcp_weight can be considered to increase.**
 
-|dataset| dcp_weight | foggy_weight |
+|Lego Haze concentration| dcp_weight | foggy_weight |
 |--|--| --|
-|  ficus | 2e-6 | 4e-6 |
-|  mic | 6e-8 | 2e-6 |
+|  lower | 6e-3 | 2e-4 |
+|  highter | 8e-2 | 2e-4 |
+
+This is shown in the figure below.
+
+![Overview of our method](https://github.com/C2022G/dcpnerf/blob/main/readme/haz_concentration.png)
 
 ## Visualization/Evaluation
 By specifying the split, ckpt_path parameters, the run.py script supports rendering new camera trajectories, including test and val, from the pre-trained weights.To render test images,run

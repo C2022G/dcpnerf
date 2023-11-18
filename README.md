@@ -53,11 +53,18 @@ After the training, three types of files will be generated in the current locati
 
 If the default parameters are used in ficus and mic datasets, the haze component will occupy too much, resulting in missing object surfaces.This is shown in the figure below. Therefore, we reduce the intensity of the space occupation of haze particles.
 
+![Overview of our method](https://github.com/C2022G/dcpnerf/blob/main/readme/over_occupancy.png)
+
 Similarly, we can adjust dcp_weight and foggy_weight if the default parameters don't apply to a particular dataset.
 
 If the scene is missing, dcp_weight and foggy_weight will be decreased, and if there are extra "tumors" in the scene, dcp_weight (mainly this one) and foggy_weight will be increased
 
 **Similarly, when the scene haze concentration increases, the dcp_weight can be considered to increase.**
+
+|dataset| dcp_weight | foggy_weight |
+|--|--| --|
+|  ficus | 2e-6 | 4e-6 |
+|  mic | 6e-8 | 2e-6 |
 
 ## Visualization/Evaluation
 By specifying the split, ckpt_path parameters, the run.py script supports rendering new camera trajectories, including test and val, from the pre-trained weights.To render test images,run

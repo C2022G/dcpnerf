@@ -25,7 +25,7 @@ Let's complete the basic setup before we run the model。
 ## Datasets
 Due to the lack of a dedicated single-haze scene image dataset, we employed virtual scenes as the experimental subjects.   We utilized Blender 3D models provided in NeRF to render realistic 360° panoramic images and depth maps while maintaining consistent camera poses and intrinsic parameters. Under the assumption of uniformly distributed haze particles in the virtual scenes, we endowed eight virtual scenes with uniform atmospheric light and the same haze density, achieved by applying fog to the rendered original clear images using the ASM formula.
 
-**The dataset can be obtained from [Baidu net disk](https://pan.baidu.com/s/10vo99AKu6sAAfWD2ZYQL7w?pwd=2022) or [Google drive](https://drive.google.com/file/d/1GeC3HEzEnf0yyYcxEUdlNLr1GDO6LbAD/view?usp=sharing)**
+**The dataset can be obtained from [Baidu net disk](https://pan.baidu.com/s/10vo99AKu6sAAfWD2ZYQL7w?pwd=2022) or [Google Drive](https://drive.google.com/file/d/1GeC3HEzEnf0yyYcxEUdlNLr1GDO6LbAD/view?usp=sharing)**
 
 
 ## Training

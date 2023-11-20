@@ -11,8 +11,14 @@ The implementation of our code is referenced in [kwea123-npg_pl](https://github.
 Let's complete the basic setup before we run the model。
 
  
-+ Clone this repo by `git clone https://github.com/C2022G/dcpnerf.git`
-+  Create an anaconda environment `conda create -n dcpnerf python=3.7` 
++ Clone this repo by
+```python
+git clone https://github.com/C2022G/dcpnerf.git
+```
++  Create an anaconda environment
+```python
+conda create -n dcpnerf python=3.7
+``` 
 + cuda code compilation dependency.
 	- Install pytorch by
 	```python
